@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang = "pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Crachá Creator</title>
+<link rel="icon" href="./images/favicon.png">
+<link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}" />
+</head>
+<body>
+	<form action="#" th:action="@{/}" th:object="${cracha}" method="post">
+	<h1>1 - Criar Modelo</h1>
+	<label for='template'>Selecione um arquivo de template</label>
+	<input type="file" id="template" th:field="*{imagem}"></input>
+	<img id="preview" src="http://placehold.it/180" />
+	<p>
+		<a href="https://blog.even3.com.br/crachas-para-eventos-academicos/">Dica:
+			Templates</a>
+	</p>
+	<textarea id="layout-cracha" cols="100" rows="10" th:field="*{conteudo}">Insira aqui!</textarea>
+	<h1>2 - Importar participantes</h1>
+	<p>Copie o conteúdo da planilha Excel, incluindo os cabeçalhos e
+		cole aqui</p>
+	<textarea id="list-participantes" cols="100" rows="10" th:field="*{participantes}"></textarea>
+	<h1>3 - Baixar</h1>
+	<button type="submit" onclick="mostra()" style="display: block;">Baixar
+		crachás</button>
+	</form>
+		
+	<script type="text/javascript" th:src="@{./js/main.js}"></script>
+</body>
+</html>
