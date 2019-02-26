@@ -2,29 +2,25 @@ package br.com.even3.crachaChallenge.models;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import org.springframework.web.multipart.MultipartFile;
 
-@Entity
-@Table(name = "cracha")
+// @Entity
+// @Table(name = "cracha")
 public class Cracha implements Serializable {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	// @Id
+	// @GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	private String layout;
 	private String conteudo;
-	private String imagem;
+	private MultipartFile imagem;
 	private Participante participantes;
 
 	public String getConteudo() {
 		return conteudo;
 	}
 
-	public String getImagem() {
+	public MultipartFile getImagem() {
 		return imagem;
 	}
 
@@ -40,7 +36,7 @@ public class Cracha implements Serializable {
 		this.conteudo = conteudo;
 	}
 
-	public void setImagem(String imagem) {
+	public void setImagem(MultipartFile imagem) {
 		this.imagem = imagem;
 	}
 
