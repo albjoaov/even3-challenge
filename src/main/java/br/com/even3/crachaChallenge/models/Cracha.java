@@ -1,12 +1,10 @@
 package br.com.even3.crachaChallenge.models;
 
-import java.io.Serializable;
-
 import org.springframework.web.multipart.MultipartFile;
 
 // @Entity
 // @Table(name = "cracha")
-public class Cracha implements Serializable {
+public class Cracha { // implements Serializable {
 
 	// @Id
 	// @GeneratedValue(strategy = GenerationType.AUTO)
