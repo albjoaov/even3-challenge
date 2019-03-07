@@ -1,78 +1,50 @@
 package br.com.even3.crachaChallenge.models;
 
-// @Entity
-// @Table(name = "participante")
+public class Participante {
+	private String col1;
+	private String col2;
+	private String col3;
+	private String col4;
+	private String col5;
 
-public class Participante { // implements Serializable {
-
-	// private static final long serialVersionUID = 1L;
-
-	// @Id
-	// @GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
-
-	private String nome;
-	private String pais;
-	private String instituicao;
-	private String email;
-	private String inscricao;
-
-	public Participante(long id, String nome, String pais, String instituicao, String email, String inscricao) {
-		super();
-		this.id = id;
-		this.nome = nome;
-		this.pais = pais;
-		this.instituicao = instituicao;
-		this.email = email;
-		this.inscricao = inscricao;
+	public String getCol1() {
+		return col1;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getCol2() {
+		return col2;
 	}
 
-	public long getId() {
-		return id;
+	public String getCol3() {
+		return col3;
 	}
 
-	public String getInscricao() {
-		return inscricao;
+	public String getCol4() {
+		return col4;
 	}
 
-	public String getInstituicao() {
-		return instituicao;
+	public String getCol5() {
+		return col5;
 	}
 
-	public String getNome() {
-		return nome;
+	public void setCol1(String col1) {
+		this.col1 = col1;
 	}
 
-	public String getPais() {
-		return pais;
+	public void setCol2(String col2) {
+		this.col2 = col2;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setCol3(String col3) {
+		this.col3 = col3;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	public void setCol4(String col4) {
+		this.col4 = col4;
 	}
 
-	public void setInscricao(String inscricao) {
-		this.inscricao = inscricao;
-	}
-
-	public void setInstituicao(String instituicao) {
-		this.instituicao = instituicao;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public void setPais(String pais) {
-		this.pais = pais;
+	public void setCol5(String col5) {
+		this.col5 = col5;
 	}
 
 }

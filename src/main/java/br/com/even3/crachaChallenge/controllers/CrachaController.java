@@ -17,7 +17,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.itextpdf.text.DocumentException;
 
-import br.com.even3.crachaChallenge.UploadComponent;
 import br.com.even3.crachaChallenge.models.Cracha;
 
 @Controller
@@ -25,18 +24,22 @@ import br.com.even3.crachaChallenge.models.Cracha;
 public class CrachaController {
 
 	@Autowired
-	private UploadComponent upload;
+	private br.com.even3.crachaChallenge.services.CrachaService crachaService;
 
 	@PostMapping("/gerar")
 	public String GerarCracha(@ModelAttribute Cracha cracha, @RequestParam MultipartFile imagem,
-			@RequestParam String conteudo, HttpServletResponse httpServletResponse)
+			@RequestParam String conteudo, @RequestParam String participantes, HttpServletResponse httpServletResponse)
 			throws MalformedURLException, IOException, DocumentException {
-		byte[] bytes = upload.salvarFoto(imagem, conteudo);
+
+		byte[] bytes = crachaService.criarPDF(imagem, conteudo, participantes);
+		// System.out.println(participantes);
+		// Envio do arquivo para o client
 		httpServletResponse.setContentType("application/pdf");
 		httpServletResponse.setHeader("Content-Disposition", "attachment; filename=cracha.pdf");
 		httpServletResponse.setHeader("Pragma", "no-cache");
 		httpServletResponse.setHeader("Cache-Control", "no-cache");
 		httpServletResponse.getOutputStream().write(bytes);
+
 		return "index";
 	}
 

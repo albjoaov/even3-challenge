@@ -2,17 +2,12 @@ package br.com.even3.crachaChallenge.models;
 
 import org.springframework.web.multipart.MultipartFile;
 
-// @Entity
-// @Table(name = "cracha")
-public class Cracha { // implements Serializable {
+public class Cracha {
 
-	// @Id
-	// @GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
 	private String layout;
 	private String conteudo;
 	private MultipartFile imagem;
-	private Participante participantes;
+	private String participantes;
 
 	public String getConteudo() {
 		return conteudo;
@@ -26,7 +21,7 @@ public class Cracha { // implements Serializable {
 		return layout;
 	}
 
-	public Participante getParticipantes() {
+	public String getParticipantes() {
 		return participantes;
 	}
 
@@ -42,7 +37,7 @@ public class Cracha { // implements Serializable {
 		this.layout = layout;
 	}
 
-	public void setParticipantes(Participante participantes) {
+	public void setParticipantes(String participantes) {
 		this.participantes = participantes;
 	}
 
